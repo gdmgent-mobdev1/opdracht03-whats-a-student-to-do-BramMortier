@@ -1,0 +1,27 @@
+.new-task {
+    &__chips {
+        display: flex;
+        gap: var(--space-sm);
+        flex-wrap: wrap;
+    }
+
+    &__chip {
+        padding: var(--space-xs) var(--space-lg);
+        color: var(--grey-700);
+        background-color: var(--grey-300);
+        border: 1px solid var(--grey-500);
+        display: flex;
+        justify-content: center;
+        transition: background-color ease 0.3s;
+
+        &:active {
+            background-color: var(--grey-500);
+        }
+
+        &--selected {
+            background-color: var(--orange-900);
+            border-color: var(--orange-700);
+            color: var(--white);
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.login,
+.register {
+    &__cover-image img {
+        height: 40vh;
+        object-fit: cover;
+    }
+}

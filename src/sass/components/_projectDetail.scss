@@ -1,0 +1,142 @@
+.project {
+    &__general-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__deadline {
+        display: flex;
+        gap: var(--space-sm);
+
+        img {
+            height: 25px;
+        }
+    }
+
+    &__members-info {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+
+    &__members-list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__member {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--white);
+        background-color: var(--grey-500);
+        border-radius: 100%;
+
+        &:not(:last-child) {
+            margin-right: -0.75rem;
+        }
+    }
+
+    &__add-member {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--white);
+        background-color: var(--orange-900);
+        border-radius: 100%;
+        padding: var(--space-sm);
+    }
+
+    &__tasks {
+        padding-block: var(--space-sm) var(--space-md);
+        background-color: var(--blue-900);
+    }
+
+    &__progress-info {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+
+    &__progress-bar {
+        height: 0.5rem;
+        background-color: var(--orange-100);
+        width: 100%;
+        position: relative;
+
+        span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 65%;
+            background-color: var(--orange-900);
+        }
+    }
+
+    &__tasks-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    &__tasks-list-placeholder {
+        padding: var(--space-sm);
+        border: 2px solid var(--blue-700);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-md);
+
+        span {
+            color: var(--blue-500);
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__task {
+        background-color: var(--white);
+        border: 1px solid var(--grey-500);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-md);
+        transition: background-color ease 0.3s;
+
+        &--dragging {
+            opacity: 0.5;
+            background-color: var(--white);
+        }
+
+        &:active {
+            background-color: var(--grey-500);
+            opacity: 1;
+        }
+    }
+
+    &__task-progress {
+        background-color: var(--grey-300);
+        border: 1px solid var(--grey-500);
+        padding-block: var(--space-xxs);
+        width: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: var(--grey-700);
+
+        &--in-progress {
+            background-color: var(--orange-900);
+            color: var(--white);
+            border: 1px solid var(--orange-700);
+        }
+
+        &--completed {
+            background-color: var(--green-700);
+            color: var(--white);
+            border: 1px solid var(--green-900);
+        }
+    }
+}

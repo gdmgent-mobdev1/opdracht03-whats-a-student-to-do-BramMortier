@@ -1,0 +1,62 @@
+.task {
+    &__progress {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: var(--grey-300);
+        border: 1px solid var(--grey-500);
+    }
+
+    &__progress-option {
+        font-weight: 600;
+        justify-content: center;
+        padding-block: var(--space-sm);
+        display: flex;
+        justify-content: center;
+        flex: 1;
+
+        &--selected {
+            background-color: var(--green-700);
+            border: 1px solid var(--green-900);
+            margin: -1px;
+            color: var(--white);
+        }
+    }
+
+    &__notes {
+        background-color: var(--blue-900);
+    }
+
+    &__notes-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    &__note {
+        background-color: var(--white);
+        border: 1px solid var(--grey-500);
+        padding: var(--space-sm) var(--space-sm) 0 var(--space-sm);
+    }
+
+    &__time-spent {
+        background-color: var(--orange-900);
+    }
+
+    &__clock {
+        display: flex;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+
+    &__clock-timeunit div {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--space-xs);
+    }
+
+    &__clock-digit {
+        background-color: var(--orange-500);
+        padding: 0 var(--space-lg) var(--space-xxs);
+    }
+}

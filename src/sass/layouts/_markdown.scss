@@ -1,0 +1,30 @@
+.md {
+    font-size: var(--text-sm);
+    color: var(--grey-700);
+
+    &__ul,
+    &__ol {
+        font-size: var(--text-sm);
+        margin-left: 1rem;
+        list-style: square;
+        color: var(--grey-700);
+        margin-bottom: var(--space-sm);
+    }
+}
+
+pre {
+    white-space: pre-wrap;
+    padding: var(--space-sm) var(--space-lg);
+    background-color: var(--blue-900);
+    width: fit-content;
+    margin-bottom: var(--space-sm);
+
+    code {
+        margin-top: -1rem;
+        width: 100%;
+        height: fit-content;
+        color: var(--white);
+        font-size: var(--text-sm);
+        display: block;
+    }
+}

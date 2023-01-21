@@ -1,0 +1,25 @@
+.page {
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
+
+    &--active {
+        display: initial;
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__action-btns {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+    }
+}
+
+.clear-header {
+    margin-top: 4.5rem;
+}

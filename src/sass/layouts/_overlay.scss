@@ -1,0 +1,38 @@
+.overlay {
+    position: fixed;
+    top: -100%;
+    opacity: 0;
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay);
+    backdrop-filter: blur(5px);
+    padding: var(--space-sm);
+    z-index: 1999;
+    transition: all ease 0.5s;
+
+    &--active {
+        top: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &__content {
+        background-color: var(--white);
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    &__header {
+        padding-bottom: var(--space-xs);
+        margin-bottom: var(--space-lg);
+        border-bottom: 1px solid var(--grey-500);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button img {
+            transform: rotate(45deg);
+        }
+    }
+}

@@ -1,0 +1,102 @@
+:root {
+    // fonts
+    --font: "soleil", sans-serif;
+
+    // typescale
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-xxl: 2rem;
+    --text-xxxl: 3.5rem;
+}
+
+body,
+form,
+input,
+textarea {
+    font-family: var(--font);
+    font-size: var(--text-md);
+    color: var(--blue-900);
+    font-weight: 300;
+}
+
+.number {
+    font-size: var(--text-xxxl);
+    font-weight: 600;
+    color: var(--white);
+}
+
+h1,
+.text-xxl {
+    font-size: var(--text-xxl);
+}
+
+h2,
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+h3,
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+h4,
+.text-md {
+    font-size: var(--text-md);
+}
+
+h5,
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+h6,
+.text-xs {
+    font-size: var(--text-xs);
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.extra-bold {
+    font-weight: 900;
+}
+
+.text-orange {
+    color: var(--orange-900);
+}
+
+.text-green {
+    color: var(--green-900);
+}
+
+.text-blue {
+    color: var(--blue-900);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-subtle {
+    color: var(--grey-700);
+}
+
+.center {
+    text-align: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.error {
+    color: var(--error-border);
+}
