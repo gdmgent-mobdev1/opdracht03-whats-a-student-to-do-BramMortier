@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timewarp</title>
+      <script type="module" crossorigin src="/assets/index-f99b7077.js"></script>
+      <link rel="stylesheet" href="/assets/index-569efc4a.css">
+    </head>
+    <body>
+        <main>
+            <!-- PAGES -->
+
+            <!-- login page begin -->
+            <div id="login-page" class="login page page--active">
+                <div class="login__cover-image">
+                    <img src="/images/student-login-bg.jpg" alt="cover image" />
+                </div>
+
+                <form id="login-form" class="login__form form p-lg" method="POST">
+                    <h2 class="text-xxl mb-xl">Login</h2>
+
+                    <div id="login-form-errors" class="form__errors mb-sm"></div>
+
+                    <div class="form__control mb-sm">
+                        <div class="form__input-icon">
+                            <img src="/icons/email.svg" alt="user icon" />
+                        </div>
+                        <input class="form__input" type="text" placeholder="Email" name="email" />
+                    </div>
+
+                    <div class="form__control mb-sm">
+                        <div class="form__input-icon">
+                            <img src="/icons/padlock.svg" alt="user icon" />
+                        </div>
+                        <input class="form__input" type="password" placeholder="Password" name="password" />
+                    </div>
+                    <p class="form__reset-link bold mb-xl">Forgot password?</p>
+
+                    <button class="btn btn--primary mb-sm" type="submit">Login</button>
+                    <button id="google-auth-btn" class="btn btn--tertiary mb-sm" type="button">
+                        <img class="btn__icon" src="/icons/google.svg" alt="google icon" />
+                        Login with Google
+                    </button>
+
+                    <p class="text-sm center">New to Time Warp? <span id="login-form-link" class="text-orange extra-bold">Sign up</span></p>
+                </form>
+            </div>
+
+            <!-- Register page begin -->
+            <div id="register-page" class="register page">
+                <div class="register__cover-image">
+                    <img src="/images/student-register-bg.jpg" alt="cover image" />
+                </div>
+
+                <form id="signup-form" class="register__form form p-lg" method="POST">
+                    <h2 class="text-xxl mb-xl">Sign up</h2>
+
+                    <div id="signup-form-errors" class="form__errors mb-sm"></div>
+
+                    <div class="form__control mb-sm">
+                        <div class="form__input-icon">
+                            <img src="/icons/user.svg" alt="user icon" />
+                        </div>
+                        <input class="form__input" type="text" placeholder="Username" name="username" />
+                    </div>
+
+                    <div class="form__control mb-sm">
+                        <div class="form__input-icon">
+                            <img src="/icons/email.svg" alt="user icon" />
+                        </div>
+                        <input class="form__input" type="text" placeholder="Email" name="email" />
+                    </div>
+
+                    <div class="form__control mb-xs">
+                        <div class="form__input-icon">
+                            <img src="/icons/padlock.svg" alt="user icon" />
+                        </div>
+                        <input id="new-password-input" class="form__input" type="password" placeholder="Password" name="password" />
+                    </div>
+
+                    <div id="password-security-bars" class="form__password-security mb-xl">
+                        <span class="form__security-bar"></span>
+                        <span class="form__security-bar"></span>
+                        <span class="form__security-bar"></span>
+                    </div>
+
+                    <button class="btn btn--primary mb-sm" type="submit">Continue</button>
+
+                    <p class="text-sm center">Already use Time Warp? <span id="signup-form-link" class="text-orange extra-bold">Login</span></p>
+                </form>
+            </div>
+
+            <!-- dashboard page begin -->
+            <div id="dashboard-page" class="dashboard page">
+                <header class="header header--complex pi-lg mb-sm">
+                    <div class="header__profile">
+                        <div class="header__profile-icon"></div>
+                        <p id="account-username" class="bold">Ahoy Bram!</p>
+                    </div>
+                    <div class="header__icons">
+                        <img id="logout-btn" src="/icons/logout.svg" alt="stats icon" />
+                        <img src="/icons/stats.svg" alt="logout icon" />
+                    </div>
+                </header>
+
+                <section class="dashboard__projects pi-lg mb-lg">
+                    <div class="section-header mb-lg clear-header">
+                        <div class="section-header__info">
+                            <h3 class="text-xl">Projects</h3>
+                            <p class="text-subtle">Let's finish that project today!</p>
+                        </div>
+                        <div class="section-header__action-btns">
+                            <button class="new-project-btn icon-btn icon-btn--secondary">
+                                <img src="/icons/plus.svg" alt="plus icon" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dashboard__projects-overview">
+                        <div id="in-progress-projects-btn" class="dashboard__overview-option dashboard__overview-option--orange">
+                            <button class="icon-btn icon-btn--secondary icon-btn--medium">
+                                <img src="/icons/arrow.svg" alt="arrow icon" />
+                            </button>
+                            <div class="dashboard__option-info">
+                                <span id="in-progress-projects-count" class="text-xxl bold text-white">12</span>
+                                <p class="text-white">In Progress</p>
+                            </div>
+                        </div>
+
+                        <div id="completed-projects-btn" class="dashboard__overview-option dashboard__overview-option--green">
+                            <button class="icon-btn icon-btn--secondary icon-btn--medium">
+                                <img src="/icons/arrow.svg" alt="arrow icon" />
+                            </button>
+                            <div class="dashboard__option-info">
+                                <span id="completed-projects-count" class="text-xxl bold text-white">23</span>
+                                <p class="text-white">Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard__tasks pi-lg">
+                    <div class="section-header mb-lg">
+                        <div class="section-header__info">
+                            <h3 class="text-xl text-white">Tasks</h3>
+                            <p class="text-white">Your most urgent tasks</p>
+                        </div>
+                        <div class="section-header__action-btns">
+                            <button class="menu-btn mt-xs">
+                                <img src="/icons/menu.svg" alt="plus icon" />
+                            </button>
+                        </div>
+                    </div>
+                    <ul id="dashboard-task-list" class="dashboard__task-list"></ul>
+                </section>
+            </div>
+
+            <!-- projects page begin -->
+            <div id="projects-page" class="projects page">
+                <header class="header pi-lg">
+                    <div id="dashboard-back-btn" class="header__back-btn">
+                        <img src="/icons/chevron-left.svg" alt="" />
+                    </div>
+                    <div class="header__page-title">
+                        <p class="bold center">Projects</p>
+                    </div>
+                </header>
+
+                <section class="projects__filters clear-header pi-lg mb-md">
+                    <div class="projects__completion-filter">
+                        <div id="projects-in-progress-btn" class="projects__filter-option projects__filter-option--active">
+                            <p class="bold">In progress</p>
+                        </div>
+                        <div id="projects-completed-btn" class="projects__filter-option">
+                            <p class="bold">Completed</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pi-lg">
+                    <ul id="projects-list" class="projects__project-list mb-md"></ul>
+
+                    <div class="projects__options mb-xxl">
+                        <button class="new-project-btn icon-btn icon-btn--large icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="plus icon" />
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- project details page begin -->
+            <div id="project-page" class="project page">
+                <header class="header pi-lg mb-sm">
+                    <div id="projects-back-btn" class="header__back-btn">
+                        <img src="/icons/chevron-left.svg" alt="" />
+                    </div>
+                    <div class="header__page-title">
+                        <p class="bold center">Project details</p>
+                    </div>
+                    <div class="header__action-btns">
+                        <img id="edit-project-btn" src="/icons/pencil.svg" alt="pencil icon" />
+                        <img id="delete-project-btn" src="/icons/trashcan-blue.svg" alt="trashcan icon" />
+                    </div>
+                </header>
+
+                <section id="project-info" class="project__general clear-header pi-lg mb-lg">
+                    <div class="project__general-header mb-md">
+                        <h3 class="text-xl">Dev Quiz</h3>
+                        <div class="project__deadline">
+                            <img src="/icons/calendar.svg" alt="calendar icon" />
+                            <span class="text-orange bold">25/04</span>
+                        </div>
+                    </div>
+
+                    <h4 class="mb-xs">Description</h4>
+                    <p class="text-sm text-subtle mb-md">
+                        Build a dynamic quiz app with the help of an API for getting your questions and answers. The app must be responsive and
+                        include a settings page to tweak the questions to your wish
+                    </p>
+
+                    <h4 class="mb-xs">Members</h4>
+                    <div class="project__members-info">
+                        <ul class="project__members-list">
+                            <li class="project__member"></li>
+                            <li class="project__member"></li>
+                            <li class="project__member"></li>
+                            <li class="project__member"></li>
+                            <li class="project__add-member">
+                                <img src="/icons/plus.svg" alt="plus icon" />
+                            </li>
+                        </ul>
+                        <span class="text-lg">3+</span>
+                    </div>
+                </section>
+
+                <section class="project__tasks pi-lg mb-md">
+                    <div class="section-header mb-sm">
+                        <div class="section-header__info">
+                            <h3 class="text-xl text-white">Tasks</h3>
+                            <p class="text-white">Come on get it over with!</p>
+                        </div>
+                        <div class="section-header__action-btns">
+                            <button class="new-task-btn icon-btn icon-btn--tertiary">
+                                <img src="/icons/plus.svg" alt="plus icon" />
+                            </button>
+                            <button class="menu-btn">
+                                <img src="/icons/menu.svg" alt="plus icon" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project__progress-info mb-md">
+                        <div class="project__progress-bar">
+                            <span class="project__progress-bar-value"></span>
+                        </div>
+                        <span class="bold text-white">65%</span>
+                    </div>
+
+                    <div class="project__tasks-overview">
+                        <button class="dropdown-btn mb-sm">
+                            Todo
+                            <img src="/icons/chevron-down.svg" alt="chevron icon" />
+                        </button>
+                        <ul id="todo-task-list" class="project__tasks-list mb-lg">
+                            <div class="project__tasks-list-placeholder">
+                                <span class="text-white bold">Add Todo</span>
+                                <img src="/icons/plus-blue.svg" alt="plus icon" />
+                            </div>
+                        </ul>
+
+                        <button class="dropdown-btn mb-sm">
+                            In progress
+                            <img src="/icons/chevron-down.svg" alt="chevron icon" />
+                        </button>
+                        <ul id="in-progress-task-list" class="project__tasks-list mb-lg"></ul>
+
+                        <button class="dropdown-btn mb-sm">
+                            Completed
+                            <img src="/icons/chevron-down.svg" alt="chevron icon" />
+                        </button>
+                        <ul id="completed-task-list" class="project__tasks-list mb-lg">
+                            <div class="project__tasks-list-placeholder">
+                                <span class="text-white bold">Add Todo</span>
+                                <img src="/icons/plus-blue.svg" alt="plus icon" />
+                            </div>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="comments pi-lg">
+                    <h3 class="text-xl mb-md">Comments</h3>
+
+                    <form id="new-comment-form" class="comment-input mb-sm">
+                        <div class="form__control form__control--gap">
+                            <input type="text" class="form__input" placeholder="Comment" name="content" />
+                            <button type="submit" class="btn icon-btn icon-btn--primary icon-btn--large">
+                                <img src="/icons/arrow.svg" alt="arrow icon" />
+                            </button>
+                        </div>
+                    </form>
+
+                    <ul id="comments-list" class="comments__list"></ul>
+                </section>
+            </div>
+
+            <!-- task details page begin -->
+            <div id="task-page" class="task page">
+                <header class="header pi-lg mb-sm">
+                    <div id="project-back-btn" class="header__back-btn">
+                        <img src="/icons/chevron-left.svg" alt="" />
+                    </div>
+                    <div class="header__page-title">
+                        <p class="bold center">Task details</p>
+                    </div>
+                    <div class="header__action-btns">
+                        <img id="edit-task-btn" src="/icons/pencil.svg" alt="pencil icon" />
+                        <img id="delete-task-btn" src="/icons/trashcan-blue.svg" alt="trashcan icon" />
+                    </div>
+                </header>
+
+                <section id="task-info" class="task__general clear-header pi-lg mb-lg">
+                    <h3 class="text-xl mb-md">Design the login page</h3>
+                    <h4 class="mb-sm">Description</h4>
+                    <p class="text-subtle mb-md text-sm">
+                        Brainstorm some nice layouts and make them in to low fidelity wireframes. Also make sure to add interactivity so its
+                        straightforward to test out.
+                    </p>
+                    <h4 class="mb-sm">Task Progress</h4>
+                    <div class="task__progress">
+                        <div class="task__progress-option task__progress-option--selected">To do</div>
+                        <div class="task__progress-option">In progress</div>
+                        <div class="task__progress-option">Complete</div>
+                    </div>
+                </section>
+
+                <section class="task__notes p-lg">
+                    <h3 class="text-xl text-white mb-sm">Notes</h3>
+                    <form id="new-note-form" class="note-input mb-sm">
+                        <div class="form__control form__control--gap">
+                            <input id="new-note-btn" type="text" class="form__input form__input--light" placeholder="Note" name="content" />
+                            <button class="btn icon-btn icon-btn--primary icon-btn--large">
+                                <img src="/icons/arrow.svg" alt="arrow icon" />
+                            </button>
+                        </div>
+                    </form>
+
+                    <ul id="notes-list" class="task__notes-list"></ul>
+                </section>
+
+                <section class="task__time-spent p-lg">
+                    <h3 class="text-white text-xl mb-sm">Time spent</h3>
+                    <div class="task__clock">
+                        <div class="task__clock-timeunit">
+                            <div class="mb-xxs">
+                                <div class="task__clock-digit number">0</div>
+                                <div class="task__clock-digit number">0</div>
+                            </div>
+                            <div class="task__clcok-timeunit-label upper bold">hours</div>
+                        </div>
+
+                        <div class="task__clock-timeunit">
+                            <div class="mb-xxs">
+                                <div class="task__clock-digit number">0</div>
+                                <div class="task__clock-digit number">0</div>
+                            </div>
+                            <div class="task__clcok-timeunit-label upper bold">minutes</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- MODALS -->
+
+            <!-- new project page begin -->
+            <div id="new-project-overlay" class="new-project overlay">
+                <div class="overlay__content">
+                    <div class="overlay__header">
+                        <h3 class="text-xl">New Project</h3>
+                        <button class="close-modal-btn icon-btn icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="arrow icon" />
+                        </button>
+                    </div>
+                    <form id="new-project-form" class="form">
+                        <div id="new-project-succes-message" class="form__succes mb-sm">
+                            <span class="text-green text-sm">Created project succesfully!</span>
+                        </div>
+                        <div id="new-project-form-errors" class="form__errors mb-sm"></div>
+
+                        <h4 class="mb-sm">General info</h4>
+                        <div class="form__control mb-sm">
+                            <input type="text" class="form__input" placeholder="Project name" name="projectName" />
+                        </div>
+                        <div class="form__control mb-lg">
+                            <textarea class="form__textarea" placeholder="Description" name="description"></textarea>
+                        </div>
+
+                        <h4 class="mb-sm">Add collaborators</h4>
+                        <div class="new-project__collaborators mb-lg">
+                            <div class="new-project__add-collaborator">
+                                <button type="button" id="add-collaborator-btn" class="icon-btn icon-btn--rounded icon-btn--primary icon-btn--large">
+                                    <img src="/icons/plus.svg" alt="plus icon" />
+                                </button>
+                                <p class="text-subtle">Add new collaborator</p>
+                            </div>
+                            <ul id="new-project-collaborators-list" class="new-project__collaborators-list"></ul>
+                        </div>
+
+                        <h4 class="mb-sm">Project deadline</h4>
+                        <div class="new-project__deadline mb-xxl">
+                            <input type="number" class="form__input" placeholder="Day" name="day" />
+                            <input type="number" class="form__input" placeholder="Month" name="month" />
+                            <input type="number" class="form__input" placeholder="Year" name="year" />
+                        </div>
+
+                        <button id="create-project-btn" type="submit" class="btn btn--secondary">Create</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- new task page begin -->
+            <div id="new-task-overlay" class="new-task overlay">
+                <div class="overlay__content">
+                    <div class="overlay__header">
+                        <h3 class="text-xl">New Task</h3>
+                        <button class="close-modal-btn icon-btn icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="arrow icon" />
+                        </button>
+                    </div>
+                    <form id="new-task-form" class="form">
+                        <div id="new-task-succes-message" class="form__succes mb-sm">
+                            <span class="text-green text-sm">Created task succesfully!</span>
+                        </div>
+                        <div id="new-task-form-errors" class="form__errors mb-sm"></div>
+
+                        <h4 class="mb-sm">General info</h4>
+                        <div class="form__control mb-sm">
+                            <input type="text" class="form__input" placeholder="Task name" name="taskName" />
+                        </div>
+                        <div class="form__control mb-lg">
+                            <textarea class="form__textarea" placeholder="Description" name="description"></textarea>
+                        </div>
+
+                        <h4 class="mb-sm">Set task progress</h4>
+                        <div class="form__dropdown mb-lg">
+                            <div id="new-task-dropdown" class="form__dropdown-selected">
+                                <input type="hidden" name="progress" value="Todo" />
+                                <span>In progress</span>
+                                <img src="/icons/chevron-down-grey.svg" alt="chevron icon" />
+                            </div>
+                            <ul id="new-task-dropdown-list" class="form__dropdown-list">
+                                <li class="form__dropdown-option">To do</li>
+                                <li class="form__dropdown-option form__dropdown-option--selected">In progress</li>
+                                <li class="form__dropdown-option">Completed</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="mb-sm">Estimated time to complete</h4>
+                        <div class="form__control mb-lg">
+                            <input type="text" class="form__input form__input--small" placeholder="Estimate" name="estimate" />
+                        </div>
+                        <ul class="new-task__chips mb-xxl">
+                            <li class="new-task__chip">5m</li>
+                            <li class="new-task__chip">15m</li>
+                            <li class="new-task__chip">30m</li>
+                            <li class="new-task__chip">1u</li>
+                            <li class="new-task__chip">1u 30m</li>
+                            <li class="new-task__chip">2u</li>
+                            <li class="new-task__chip">3u</li>
+                            <li class="new-task__chip">4u+</li>
+                        </ul>
+
+                        <button id="create-task-btn" class="btn btn--secondary">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- new note editor begin -->
+            <div id="new-note-overlay" class="new-note overlay">
+                <div class="overlay__content">
+                    <div class="overlay__header">
+                        <h3 class="text-xl">New Note</h3>
+                        <button class="close-modal-btn icon-btn icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="arrow icon" />
+                        </button>
+                    </div>
+                    <form id="new-note-editor" class="form">
+                        <div id="new-note-succes-message" class="form__succes mb-sm">
+                            <span class="text-green text-sm">Created project succesfully!</span>
+                        </div>
+
+                        <h4 class="mb-sm">Content</h4>
+                        <div class="new-note__options mb-sm">
+                            <ul class="new-note__markdown-hotkeys">
+                                <li id="heading-hotkey" class="new-note__hotkey">
+                                    <img src="/icons/heading.svg" alt="heading icon" />
+                                </li>
+                                <li id="subtitle-hotkey" class="new-note__hotkey">
+                                    <img src="/icons/subtitle.svg" alt="subtitle icon" />
+                                </li>
+                                <li id="list-hotkey" class="new-note__hotkey new-note__hotkey--small-icon">
+                                    <img src="/icons/list.svg" alt="list icon" />
+                                </li>
+                                <li id="code-hotkey" class="new-note__hotkey new-note__hotkey--small-icon">
+                                    <img src="/icons/code-block.svg" alt="code-block icon" />
+                                </li>
+                            </ul>
+                            <button id="preview-markdown-btn" type="button" class="icon-btn icon-btn--secondary">
+                                <img src="/icons/eye.svg" alt="eye icon" />
+                            </button>
+                        </div>
+
+                        <textarea
+                            name="content"
+                            id="markdown-content"
+                            class="new-note__markdown-content new-note__markdown-content--active mb-xxl text-subtle text-sm"
+                            placeholder="Write your content"
+                        ></textarea>
+                        <div id="markdown-preview" class="new-note__markdown-preview mb-xxl"></div>
+
+                        <button id="create-note-btn" class="btn btn--secondary">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- confirm project deletion begin -->
+            <div id="delete-project-overlay" class="new-note overlay">
+                <div class="overlay__content">
+                    <div class="overlay__header">
+                        <h3 class="text-xl">Delete Project</h3>
+                        <button class="close-modal-btn icon-btn icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="arrow icon" />
+                        </button>
+                    </div>
+                    <div>
+                        <div id="project-deletion-succes-message" class="form__delete mb-sm">
+                            <span class="error text-sm">Deleting Project...</span>
+                        </div>
+                        <h4 class="mb-xxl">Are u sure you want to delete this project?</h4>
+                        <button id="confirm-delete-project-btn" class="btn btn--primary btn--full-width">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- confirm task deletion begin -->
+            <div id="delete-task-overlay" class="new-note overlay">
+                <div class="overlay__content">
+                    <div class="overlay__header">
+                        <h3 class="text-xl">Delete Task</h3>
+                        <button class="close-modal-btn icon-btn icon-btn--secondary">
+                            <img src="/icons/plus.svg" alt="arrow icon" />
+                        </button>
+                    </div>
+                    <div>
+                        <div id="task-deletion-succes-message" class="form__delete mb-sm">
+                            <span class="error text-sm">Deleting task...</span>
+                        </div>
+                        <h4 class="mb-xxl">Are u sure you want to delete this task?</h4>
+                        <button id="confirm-delete-task-btn" class="btn btn--primary btn--full-width">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE TRANSITION -->
+
+            <!-- default transition -->
+            <div class="page-transition">
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+                <span class="tile"></span>
+            </div>
+        </main>
+
+        
+    </body>
+</html>
